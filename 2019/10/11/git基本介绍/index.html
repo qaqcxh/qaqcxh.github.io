@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>git基本介绍 | qwqcxh</title>
+  <title>git学习之基础篇 | qwqcxh</title>
   <meta name="keywords" content=" 工具介绍 ">
-  <meta name="description" content="git基本介绍 | qwqcxh">
+  <meta name="description" content="git学习之基础篇 | qwqcxh">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介qwqcxh,珞喻路1037号废柴。即将赴ICT摸鱼，对系统方向诸如linux、虚拟机比较感冒。目前在学习linux内核相关知识。平时钟情于动漫，喜欢进击的巨人、秦时明月、东京喰种、鬼灭之刃等动漫qwq。欢迎大家与我交流。  唯有恐惧，方能勇敢。认识自己的无知是最大的智慧 –苏格拉底  联系方式 QQ:1686157273 Email:1686157273@qq.com">
 <meta property="og:type" content="website">
@@ -212,7 +212,7 @@
            href="/2019/10/11/git基本介绍/"
            data-tag="工具介绍"
            data-author="" >
-            <span class="post-title" title="git基本介绍">git基本介绍</span>
+            <span class="post-title" title="git学习之基础篇">git学习之基础篇</span>
             <span class="post-date" title="2019-10-11 20:21:11">2019/10/11</span>
         </a>
         
@@ -230,7 +230,7 @@
     <div class="pjax">
         <article id="post-git基本介绍" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">git基本介绍</h1>
+        <h1 class="article-title">git学习之基础篇</h1>
     
     <div class="article-meta">
         
@@ -254,7 +254,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-11 20:27:18'>2019-10-11 20:21</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-19 13:31:07'>2019-10-11 20:21</time>
         
     </div>
     <div class="article-meta">
@@ -287,7 +287,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-Basics"><span class="toc-text">Git Basics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#获取git仓库"><span class="toc-text">获取git仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#记录仓库的修改"><span class="toc-text">记录仓库的修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看暂存与未暂存的修改"><span class="toc-text">查看暂存与未暂存的修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交变更"><span class="toc-text">提交变更</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移除文件"><span class="toc-text">移除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看提交历史"><span class="toc-text">查看提交历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撤销"><span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#远程操作"><span class="toc-text">远程操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打标记"><span class="toc-text">打标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#别名"><span class="toc-text">别名</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -303,7 +303,82 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1>
+        <h1 id="Git-Basics"><a href="#Git-Basics" class="headerlink" title="Git Basics"></a>Git Basics</h1><h2 id="获取git仓库"><a href="#获取git仓库" class="headerlink" title="获取git仓库"></a>获取git仓库</h2><ol>
+<li>一般而言，获取git仓库有如下两种方式：<blockquote><ol>
+<li>将尚未处于版本控制下的本地仓库加入git仓库。</li>
+<li>从其他地方克隆一个已经存在git仓库。</li>
+</ol>
+</blockquote></li>
+<li>当你有一个尚未处于版本控制的工程目录并且想开始用git进行控制时，首先需要到工程目录下输入<strong>git init</strong>,该命令将创建一个.git目录记录版本控制信息。之后可以用<strong>git add <files></files></strong>将需要跟踪的文件放入暂存区。最后使用<strong>git commit</strong>提交进仓库即可。</li>
+<li>从远程仓库克隆到本地的命令是<strong>git clone <url></url></strong>。该命令将在本地创建一个远程仓库的副本。</li>
+</ol>
+<h2 id="记录仓库的修改"><a href="#记录仓库的修改" class="headerlink" title="记录仓库的修改"></a>记录仓库的修改</h2><ol>
+<li>任意时刻，工作目录下的文件可以被分成<strong>已追踪</strong>和<strong>未追踪</strong>两种状态。<strong>已追踪</strong>的文件是存在于上次快照中的文件或者说是git了解的文件(能显示该文件的状态)。<strong>未追踪</strong>的文件则指目录下的其他文件。</li>
+<li>git追踪的文件有4种状态。分别是<strong>Untracked</strong>、<strong>Unmodified</strong>、<strong>Modified</strong>以及<strong>Staged</strong>。它们之间的流转可以参见下图:  <img src="/img/git基本介绍/git_filestate.png"></li>
+<li>用来确定各个文件状态的常用命令是<strong>git status</strong>。默认情况下该命令输出当前所在分支、未跟踪的文件以及要提交的变更。</li>
+<li>要跟踪新文件，需要使用<strong>git add <filename></filename></strong>。同时，若一个已经跟踪的文件发生修改也需要使用该命令将修改暂存，等待下一次提交。</li>
+<li><strong>git status</strong>显示的信息虽然详细，但是稍微有点冗余。可以使用<strong>git status -s</strong>来得到一个简化版的输出,输出格式为<strong>xx <filename></filename></strong>，前两个字符表示文件暂存区以及当前目录区的状态。常见的字符包括<strong>A</strong>(添加的新文件),<strong>M</strong>(已修改),<strong>D</strong>(删除)，<strong>R</strong>(重命名)。</li>
+</ol>
+<h2 id="查看暂存与未暂存的修改"><a href="#查看暂存与未暂存的修改" class="headerlink" title="查看暂存与未暂存的修改"></a>查看暂存与未暂存的修改</h2><ol>
+<li>当你需要查看已经变化但尚未暂存或者已经暂存但是尚未提交的修改时可以使用命令<strong>git diff</strong>。默认情况下该命令比较暂存区与工作区的文件的差异来确定修改的内容。</li>
+<li><strong>git diff</strong>的输出格式如下:<blockquote><p>diff --git a/file1 b/file2<br><font color="grey">a/file1表示修改文件在git中（暂存区或仓库）的最新版本,b/file1表示该文件在工作区的版本.</font><br>index &lt;hash1&gt;..&lt;hash2&gt; mode<br><font color="grey">hash1 hash2分别对应两个文件的索引，mode记录文件权限相关信息。</font><br>--- a/fie1<br>+++ b/file2<br>@@ -number1,number2 +number1,number2<br><font color="grey">表示修改前，+代表修改后。number1表示显示出来的文本片段的行号，number2是显示的行数。</font><br>-<font color="red">hello</font><br> add this in hello<br>+<font color="green">insert a line</font>  </p>
+</blockquote></li>
+<li>若要查看暂存区与仓库区的不同，可以使用命令git diff --staged进行查看。</li>
+</ol>
+<h2 id="提交变更"><a href="#提交变更" class="headerlink" title="提交变更"></a>提交变更</h2><ol>
+<li>使用<strong>git commit</strong>对暂存区的文件进行一次快照，形成一次提交。</li>
+<li>使用参数 <strong>-m</strong>对本次提交进行相关说明。</li>
+<li>使用参数 <strong>-a</strong>跳过暂存阶段，直接将所有跟踪的文件提交到仓库。</li>
+</ol>
+<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><ol>
+<li>从git中移除一个文件需要先移除然后提交。<strong>git rm</strong>完成前半部分操作。其效果等价于<strong>rm file;git add file</strong>。之后使用<strong>git commit</strong>即可。</li>
+<li>该命令成功执行的前提是仓库区、暂存区、工作区的文件版本一致。这样可以保证可逆性。当文件已修改或者暂存未提交则执行失败。因为这些未提交的版本未被快照，无法回溯。</li>
+<li>可以使用<strong>git rm -f</strong>强制删除文件。这意味着作者已经彻底抛弃该文件。</li>
+<li>使用<strong>git rm --cached</strong>直接删除暂存区的文件.</li>
+<li>使用<strong>git mv</strong>给文件重命名.</li>
+</ol>
+<h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><ol>
+<li>可以使用命令<strong>git log</strong>逆序查看提交记录。默认情况下使用该命令会输出记录的哈希值、作者、提交时间以及提交信息。<img src="/img/git基本介绍/git_log.png"></li>
+<li>该命令可以添加许多选项以满足不同需要。-p选项将会在<strong>git log</strong>输出信息的基础上增加每次提交的<strong>patch</strong>信息。这在代码复查或快速浏览合作者的一系列时提交非常有用。</li>
+<li>--stat选项会增加一些统计信息。列举出发生改变的文件以及相应增添、删除的次数。</li>
+<li>--pretty选项改变默认的log输出格式。其后可接<strong>oneline</strong>,<strong>short</strong>,<strong>full</strong>,<strong>fuller</strong>,<strong>format</strong>等参数，前四个参数的显示信息详略不同。<strong>format</strong>可以自定义输出信息格式。下面列举了一些格式信息。<blockquote><p><code>%H</code> : Commit hash<br><code>%h</code> : Abbreviated commit hash<br><code>%T</code> : Tree hash<br><code>%t</code> : Abbreviated tree hash<br><code>%P</code> : Parent hashes<br><code>%p</code> : Abbreviated parent hashes<br><code>%an</code> : Author name<br><code>%ae</code> : Author email<br><code>%ad</code> : Author date (format respects the --date=option)<br><code>%ar</code> : Author date, relative<br><code>%cn</code> : Committer name<br><code>%ce</code> : Committer email<br><code>%cd</code> : Committer date<br><code>%cr</code> : Committer date, relative<br><code>%s</code> : Subject  </p>
+</blockquote></li>
+<li>--graph选项能以一个小巧的ASCILL图显示分支与合并的历史。 </li>
+<li>下面对一些常用的选项进行总结：<blockquote><p><code>-p</code> : Show the patch introduced with each commit.<br><code>--stat</code> : Show statistics for files modified in each commit.<br><code>--shortstat</code> : Display only the changed/insertions/deletions line from the –stat command.<br><code>--name-only</code> : Show the list of files modified after the commit information.<br><code>--name-status</code> : Show the list of files affected with added/modified/deleted information as well.<br><code>--abbrev-commit</code> : Show only the first few characters of the SHA-1 checksum instead of all 40.<br><code>--relative-date</code> : Display the date in a relative format (for example, “2 weeks ago”) instead of<br><code>using</code> : the full date format.<br><code>--graph</code> : Display an ASCII graph of the branch and merge history beside the log output.<br><code>--pretty</code> : Show commits in an alternate format. Options include oneline, short, full,<br><code>fuller</code> : and format (where you specify your own format).<br><code>--oneline</code> : Shorthand for --pretty=oneline --abbrev-commit used together.</p>
+</blockquote></li>
+<li>如果需要从全部的提交历史中筛选出某些记录，需要用到<strong>git log</strong>的另一类选项。具体来说，可以按照时间、作者、提交信息以及文件中某关键字次数的改变来筛选。<br>按照时间可以选参数 <strong>--since</strong>(<strong>--after</strong>),<strong>--until</strong>(<strong>--before</strong>)。按照作者使用 <strong>--author</strong>。按照提交信息可以使用 <strong>--grep</strong><br>。按照关键字改变次数则可用参数 <strong>--S</strong>完成。比如在代码中新加入了一个函数，调用了一个函数都会导致代码中函数名出现次数的改变。这时用 <strong>-S</strong>可以便捷地知道哪些提交与该函数相关。这类筛选参数总结如下：<blockquote><p><code>-&lt;n&gt;</code> : Show only the last n commits<br><code>--since</code> : --after Limit the commits to those made after the specified date.<br><code>--until</code> : --before Limit the commits to those made before the specified date.<br><code>--author</code> : Only show commits in which the author entry matches the<br><code>specified</code> : string.<br><code>--committer</code> : Only show commits in which the committer entry matches the<br><code>specified</code> : string.<br><code>--grep</code> : Only show commits with a comm:it message containing the string<br><code>-S</code> : Only show commits adding or removing code matching the string</p>
+</blockquote>
+
+
+</li>
+</ol>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><ol>
+<li>任何时刻，开发者可能需要撤销某些东西。下面会介绍几种常见的撤销操作，这类操作需要格外小心，因为它们是git少数可能会丢失你工作的命令。</li>
+<li>当你提交过早而少<code>git add</code>某些文件,或者提交的文件有错误时，可以使用命令<code>git commit --amend</code>.该命令使用本次暂存区的修改进行提交以替换掉上次提交。</li>
+<li>若需要取消暂存某文件，可以使用命令<code>git reset HEAD filename</code>。若需要重置修改则可以使用命令<code>git checkout -- filename</code>。</li>
+</ol>
+<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><ol>
+<li>为了能在任何git工程上与他人合作，需要了解如何管理远程仓库。与他人合作包括管理远程仓库以及向远程仓库push、pull数据。而管理远程仓库包括了解如何添加、移除远程仓库以及管理各种远程分之并定义是否追踪等等。</li>
+<li>查看本机远程仓库的配置，可使用命令<strong>git remote</strong>。该命令将显示所有远程仓库的短名。若需要详细查看，可以使用命令<strong>git remote -v</strong>。</li>
+<li>添加远程仓库使用命令<strong>git remote add <shortname> <url></url></shortname></strong>。如此即可使用该shortname向远程仓库推拉数据。</li>
+<li>从远程仓库下拉数据可以使用命令<strong>git fetch <shortname></shortname></strong>。该命令从远程仓库拉取本地没有的代码，但不会自动与当前工作的分支进行merge。要拉取并与当前分支merge则需要使用命令<strong>git pull</strong>。</li>
+<li>将某个本地分支推送到远程仓库可以使用<strong>git push <shortname> <branch></branch></shortname></strong>。需要注意推送前若其他人已经对远程仓库进行了修改。那么只有先将它们的修改拉取并合并后才能push成功。</li>
+<li>当需要查看某特定远程仓库的信息时可以使用<strong>git remote show</strong>。</li>
+<li>为远程分支重命名使用<strong>git remote rename <oldname> <newname></newname></oldname></strong>。移除远程分支使用命令<strong>git remote rm <shortname></shortname></strong>。</li>
+</ol>
+<h2 id="打标记"><a href="#打标记" class="headerlink" title="打标记"></a>打标记</h2><ol>
+<li>当我们需要在仓库的历史版本中标记某些重要的点，就要用到git的tag功能了。对tag的基本动作包括列举出已经存在的标记、如何创建以及删除标记以及标记的类型。</li>
+<li>列举已经存在的标记比较简单，只需键入<strong>git tag(可附带-l或–list)</strong>命令即可,结果将以字典序顺序输出。若需要列举出某些特定的标记，则可使用<strong>git tag -l “<patern>“</patern></strong>按照patern进行筛选。patern为bash shell的通配符形式。有关shell的wildcard可参见<a href="https://linuxhint.com/bash_wildcard_tutorial/" target="_blank" rel="noopener">此文</a>。</li>
+<li>git支持两种类型的标记:轻量级标记(lightweight tag)以及注释型标记(annotated tag)。创建一个注释型标记的格式为<strong>git tag -a <tagname> -m <message></message></tagname></strong>，创建完成后可使用<strong>git show <tagname></tagname></strong>查看标记数据以及该标记所指向的提交信息。创建一个轻量级标记相对简单,不需要提供<strong>-a</strong>,<strong>-s</strong>,或者<strong>-m</strong>选项。只需要提供一个tag name即可，如<strong>git tag v1.0</strong>。</li>
+<li>默认的标记都是指向最近的一次提交,如果需要为以前某次提交做标记，可以在添加标记的命令后加上对应提交的hash值。</li>
+<li>默认情况下，<strong>git push</strong>并不传输tags到远程服务器，必须显示地列出要推送的tag。推送某条tag可以使用命令<strong>git push <shortname> <tagname></tagname></shortname></strong>。若要全部推送，则输入<strong>git push –tags</strong>命令即可。</li>
+<li>若要删除本地的标记，可以使用<strong>git tag -d <tagname></tagname></strong>。要删除远程仓库的标记，则可以使用两种方式。第一种方式为<strong>git push <shortname> :refs/tags/<tagname></tagname></shortname></strong>。第二种方式为<strong>git push <shortname> –delete <tagname></tagname></shortname></strong>。</li>
+<li>若要查看某标记所指向版本的文件，可以对该标记做<strong>git checkout</strong>。注意，当我们检出到该版本后，若要进行某些修改，需要用<strong>git checkout -b <branchname> <tagname></tagname></branchname></strong>新建一个分支然后再提交。</li>
+</ol>
+<h2 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h2><ol>
+<li>为了简化某些命令的输入，可以利用<strong>git config</strong>完成命令的别名设置。其格式为<strong>git config –global alias.<aliasname> <normal command></normal></aliasname></strong>。举例来说，正常情况下取消暂存区文件的命令是<strong>git reset HEAD – <filename></filename></strong>。若设置了<strong>git config –global alias.unstage ‘reset HEAD – ‘</strong>,则<strong>git unstage <filename></filename></strong>与其等价。</li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1686157273@qq.com </span>
     </div>
@@ -316,12 +391,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>git基本介绍</p>
+    <p><span class="copy-title">文章标题:</span>git学习之基础篇</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="qwqcxh">qwqcxh</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-11, 20:21:11</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-11, 20:27:18</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/git基本介绍/" title="git基本介绍">http://qaq.github.io/2019/10/11/git基本介绍/</a>
+    <p><span class="copy-title">最后更新:</span>2019-10-19, 13:31:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/git基本介绍/" title="git学习之基础篇">http://qaq.github.io/2019/10/11/git基本介绍/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
